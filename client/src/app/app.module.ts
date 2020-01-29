@@ -22,6 +22,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginFormComponent } from './login-form/login-form.component';
 import { MaterialLayoutComponent } from './material-layout/material-layout.component';
+import { ContactosComponent } from './contactos/contactos.component';
+import { PrincipalComponent } from './principal/principal.component';
 
 /**
  * Build API configuration
@@ -37,7 +39,9 @@ function buildApiConfiguration() {
   declarations: [
     AppComponent,
     MaterialLayoutComponent,
-    LoginFormComponent
+    LoginFormComponent,
+    ContactosComponent,
+    PrincipalComponent
   ],
   imports: [
     BrowserModule,
