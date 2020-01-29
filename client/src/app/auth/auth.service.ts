@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import createAuth0Client from '@auth0/auth0-spa-js';
 import Auth0Client from '@auth0/auth0-spa-js/dist/typings/Auth0Client';
-import * as config from '../res/raw/auth_config.json';
+import * as config from './../res/auth_config.json';
 import { from, of, Observable, BehaviorSubject, combineLatest, throwError } from 'rxjs';
 import { tap, catchError, concatMap, shareReplay } from 'rxjs/operators';
 import { Router } from '@angular/router';
@@ -38,6 +38,7 @@ export class AuthService {
   userProfile$ = this.userProfileSubject$.asObservable();
   // Create a local property for login status
   loggedIn: boolean = null;
+  getTokenSilently: any;
 
   constructor(private router: Router) {
     // On initial load, check authentication state with authorization server
@@ -119,7 +120,7 @@ export class AuthService {
     this.auth0Client$.subscribe((client: Auth0Client) => {
       // Call method to log out
       client.logout({
-        client_id: config.clientId,
+        client_id: config.client_id,
         returnTo: window.location.origin
       });
     });

@@ -6,8 +6,7 @@ import {
   HttpInterceptor
 } from '@angular/common/http';
 import { AuthService } from '../auth/auth.service';
-import { Observable } from 'rxjs/Observable';
-import {from} from 'rxjs';
+import {from, Observable} from 'rxjs';
 import { map, flatMap } from 'rxjs/operators';
 
 

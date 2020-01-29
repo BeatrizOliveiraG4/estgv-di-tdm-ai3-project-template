@@ -9,6 +9,9 @@ import { Router } from '@angular/router';
   providedIn: 'root'
 })
 export class AuthService {
+  collectFailedRequest(request: import("@angular/common/http").HttpRequest<any>) {
+    throw new Error("Method not implemented.");
+  }
   // Create an observable of Auth0 instance of client
   auth0Client$ = (from(
     createAuth0Client({
