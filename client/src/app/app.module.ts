@@ -50,6 +50,7 @@ function buildApiConfiguration() {
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    NgModule,
     MatInputModule,
     MatButtonModule,
     MatSelectModule,
