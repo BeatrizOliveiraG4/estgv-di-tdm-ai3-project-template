@@ -1,6 +1,8 @@
+
 import { LayoutModule } from '@angular/cdk/layout';
 import { HttpClientModule } from '@angular/common/http';
-import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import {NgModule, ApplicationRef} from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
@@ -13,21 +15,45 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import { environment } from '../environments/environment';
+import { ApiModule } from './api-client/api.module';
+import { Configuration, ConfigurationParameters } from './api-client/configuration';
+import { BASE_PATH } from './api-client/variables';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { LoginFormComponent } from './login-form/login-form.component';
 import { MaterialLayoutComponent } from './material-layout/material-layout.component';
+import { ContactosComponent } from './contactos/contactos.component';
+import { PrincipalComponent } from './principal/principal.component';
+import { ProfileComponent } from './profile/profile.component';
+
+/**
+ * Build API configuration
+ */
+function buildApiConfiguration() {
+  const configurationParameters: ConfigurationParameters = {};
+  // TODO: Token should be injected using HTTP Interceptor pattern (@see link in Moodle)
+  const config = new Configuration(configurationParameters);
+  return config;
+}
 
 @NgModule({
   declarations: [
     AppComponent,
-    MaterialLayoutComponent
+    MaterialLayoutComponent,
+    LoginFormComponent,
+    ContactosComponent,
+    NavBarComponent,
+    PrincipalComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    CommonModule,
     MatInputModule,
     MatButtonModule,
     MatSelectModule,
@@ -38,9 +64,13 @@ import { MaterialLayoutComponent } from './material-layout/material-layout.compo
     MatToolbarModule,
     MatSidenavModule,
     MatIconModule,
-    MatListModule
+    MatListModule,
+    ApiModule.forRoot(buildApiConfiguration),
   ],
-  providers: [],
+  providers: [
+    // Hard-coded on API *Service classes but can be overriden here
+    { provide: BASE_PATH, useValue: environment.apiBaseUrl },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -2,6 +2,9 @@
 	"folders": [
 		{
 			"path": "."
+		},
+		{
+			"path": "/Users/quint/Documents/GitHub/estgv-di-tdm-ai3-project-template/@types"
 		}
 	],
 	"settings": {}
