@@ -1,8 +1,8 @@
 
 import { LayoutModule } from '@angular/cdk/layout';
 import { HttpClientModule } from '@angular/common/http';
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import {NgModule, ApplicationRef} from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
@@ -26,6 +26,7 @@ import { LoginFormComponent } from './login-form/login-form.component';
 import { MaterialLayoutComponent } from './material-layout/material-layout.component';
 import { ContactosComponent } from './contactos/contactos.component';
 import { PrincipalComponent } from './principal/principal.component';
+import { ProfileComponent } from './profile/profile.component';
 
 /**
  * Build API configuration
@@ -44,14 +45,14 @@ function buildApiConfiguration() {
     LoginFormComponent,
     ContactosComponent,
     NavBarComponent,
-    PrincipalComponent
+    PrincipalComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    NgModule,
     CommonModule,
     MatInputModule,
     MatButtonModule,
