@@ -6,6 +6,7 @@ import { from, of, Observable, BehaviorSubject, combineLatest, throwError } from
 import { tap, catchError, concatMap, shareReplay } from 'rxjs/operators';
 import { Router } from '@angular/router';
 import { HttpRequest } from '@angular/common/http';
+import { tokenNotExpired } from 'angular2-jwt';
 
 @Injectable({
   providedIn: 'root'
@@ -133,6 +134,17 @@ public collectFailedRequest(request): void {
 public retryFailedRequests(): void {
     // retry the requests. this method can
     // be called after the token is refreshed
+  }
+
+  public getToken(): string {
+    return localStorage.getItem('token');
+  }
+  public isAuthenticated(): boolean {
+    // get the token
+    const token = this.getToken();
+    // return a boolean reflecting 
+    // whether or not the token is expired
+    return tokenNotExpired(null, token);
   }
 
 }
