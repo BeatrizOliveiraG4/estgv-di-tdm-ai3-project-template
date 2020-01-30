@@ -2,6 +2,7 @@
 import { LayoutModule } from '@angular/cdk/layout';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
@@ -51,6 +52,7 @@ function buildApiConfiguration() {
     BrowserAnimationsModule,
     HttpClientModule,
     NgModule,
+    CommonModule,
     MatInputModule,
     MatButtonModule,
     MatSelectModule,
