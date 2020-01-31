@@ -2,7 +2,7 @@
 import { buildApiErrorMessage } from '@shared';
 import { Request, Response, Router } from 'express';
 import { INTERNAL_SERVER_ERROR } from 'http-status-codes';
-import { checkJwt } from '../auth0';
+import { checkJwt, buildAuthenticationClient } from '../auth0';
 
 const router = Router();
 
@@ -13,6 +13,8 @@ const router = Router();
  */
 async function handleGetUserProfile(req: Request, res: Response) {
     // TODO: Handle user password change via Auth0 Auth API
+    //const authClient = buildAuthenticationClient();
+
     res.status(INTERNAL_SERVER_ERROR)
         .json(buildApiErrorMessage('Not implemented'));
 }
@@ -24,6 +26,7 @@ async function handleGetUserProfile(req: Request, res: Response) {
  */
 async function handleChangeUserPassword(req: Request, res: Response) {
     // TODO: Handle user password change via Auth0 Auth API
+   //  authClient.changePassword()
     res.status(INTERNAL_SERVER_ERROR)
         .json(buildApiErrorMessage('Not implemented'));
 }
