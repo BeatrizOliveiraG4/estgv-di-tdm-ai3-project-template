@@ -25,11 +25,8 @@
     "eslint-plugin-prettier": "^3.1.2",
     "express": "^4.17.1",
     "express-jwt": "^5.3.1",
-<<<<<<< HEAD
     "express-rate-limit": "^5.0.0",
-=======
     "helmet": "^3.21.2",
->>>>>>> 1a6e720f999a1df4d95d1278ed5c930828e78587
     "http-status-codes": "^1.4.0",
     "husky": "^4.2.1",
     "jwks-rsa": "^1.6.2",
@@ -50,15 +47,12 @@
     "@types/cookie-parser": "^1.4.2",
     "@types/dotenv": "^8.2.0",
     "@types/express": "^4.17.2",
-    "@types/express-jwt": "0.0.42",
     "@types/find": "^0.2.1",
     "@types/jasmine": "^3.5.1",
     "@types/jsonfile": "^5.0.0",
     "@types/morgan": "^1.7.37",
     "@types/node": "^13.1.8",
     "@types/supertest": "^2.0.8",
-    "@types/swagger-ui-express": "^4.1.1",
-    "@types/yamljs": "^0.2.30",
     "find": "^0.3.0",
     "fs-extra": "^8.1.0",
     "jasmine": "^3.5.0",
@@ -70,7 +64,6 @@
     "tslint": "^6.0.0",
     "typescript": "^3.7.5"
   },
-
   "editorConfig": {
     "env": {
       "browser": true,
