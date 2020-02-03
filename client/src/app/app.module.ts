@@ -27,6 +27,7 @@ import { MaterialLayoutComponent } from './material-layout/material-layout.compo
 import { ContactosComponent } from './contactos/contactos.component';
 import { PrincipalComponent } from './principal/principal.component';
 import { ProfileComponent } from './profile/profile.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 /**
  * Build API configuration
@@ -66,6 +67,7 @@ function buildApiConfiguration() {
     MatIconModule,
     MatListModule,
     ApiModule.forRoot(buildApiConfiguration),
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
   ],
   providers: [
     // Hard-coded on API *Service classes but can be overriden here
