@@ -102,10 +102,16 @@ function configureApiDocumentation(expressApp: express.Express) {
   );
 }
 
-// Init express
+
+//Alinea 7 !!
+//const express = require('express')
+const helmet = require('helmet')
 const app = express();
+app.use(helmet.noCache())
+app.use(helmet.frameguard())
 
 // Add middleware/settings/routes to express.
+
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
