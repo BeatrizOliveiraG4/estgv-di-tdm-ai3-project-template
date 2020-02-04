@@ -1,0 +1,42 @@
+.Perfil {
+    margin-top: 100px;
+    position: absolute;
+
+}
+
+.titulo {
+    color: rgb(90, 114, 136);
+    position: absolute;
+}
+
+.Info {
+    padding-top: 30px;
+    border: 10px dotted black;
+    padding: 15px;
+    background: lightblue;
+    background-clip: padding-box;
+}
+
+.imgut {
+    width: 90px;
+    height: 90px;
+    position: absolute;
+    margin-left: 600px;
+    margin-top: 90px;
+
+}
+
+.textos {
+    font-size: 15px;
+    color: rgb(38, 42, 66);
+    position: relative;
+    padding-top: 20px;
+
+}
+
+.textos2 {
+    font-size: 20px;
+    font-family: roboto;
+    position: absolute;
+    padding-bottom: 40px;
+}
