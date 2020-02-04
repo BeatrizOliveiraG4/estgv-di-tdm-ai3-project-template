@@ -104,7 +104,6 @@ function configureApiDocumentation(expressApp: express.Express) {
 
 
 //Alinea 7 !!
-//const express = require('express')
 const helmet = require('helmet')
 const app = express();
 app.use(helmet.noCache())
