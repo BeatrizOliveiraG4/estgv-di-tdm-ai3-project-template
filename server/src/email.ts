@@ -18,13 +18,15 @@ export function sendEmail(
   if (sendGridApiKey === undefined) {
       throw new Error('SENDGRID_API_KEY environment variable not defined');
   }
-  sendGridEmailClient.setApiKey(sendGridApiKey);
-  const msg: MailData = {
-    to,
-    from,
-    subject,
-    text: message,
-    html: message,
-  };
-  return sendGridEmailClient.send(msg);
+  return Promise.reject("ERRRO");
+  return Promise.resolve("Message sent");
+  // sendGridEmailClient.setApiKey(sendGridApiKey);
+  // const msg: MailData = {
+  //   to,
+  //   from,
+  //   subject,
+  //   text: message,
+  //   html: message,
+  // };
+  // return sendGridEmailClient.send(msg);
 }

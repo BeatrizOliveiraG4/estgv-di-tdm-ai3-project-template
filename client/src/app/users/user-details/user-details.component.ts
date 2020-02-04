@@ -12,4 +12,20 @@ export class UserDetailsComponent implements OnInit {
   ngOnInit() {
   }
 
+  btnEditClicked(event: Event) {
+
+  }
+
+  btnDeleteClicked(event: Event) {
+
+  }
+
+  btnEmailClicked(event: Event) {
+
+  }
+
+  btnRefreshClicked(event: Event) {
+
+  }
+
 }
