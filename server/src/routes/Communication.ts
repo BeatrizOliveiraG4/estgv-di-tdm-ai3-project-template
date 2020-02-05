@@ -11,29 +11,48 @@ const router = Router();
  * @param req Request
  * @param res Response
  */
-async function handleSendEmail(req: Request, res: Response) {
-    try {
-        // TODO: Handle sending of email via SendGrid
-        const sendEmailRequest = req.body as Api.SendEmailRequest; // TODO: Validate message data in body
-        let fromEmail = sendEmailRequest.from;
-        if (fromEmail === undefined) {
-            // TODO: Get user profile from Auth0 auth0 API
-            const auth0AuthClient = buildAuthenticationClient();
-            const accessToken = getAccessToken(req);
-            // TODO: User profile should be cached to avoid many calls to API in order to not get rate limited
-            const userProfile = await auth0AuthClient.getProfile(accessToken);
-            fromEmail = userProfile.email as string;
-        };
+// async function handleSendEmail(req: Request, res: Response) {
+//     try {
+//         // TODO: Handle sending of email via SendGrid
+//         const sendEmailRequest = req.body as Api.SendEmailRequest; // TODO: Validate message data in body
+//         let fromEmail = sendEmailRequest.from;
+//         if (fromEmail === undefined) {
+//             // TODO: Get user profile from Auth0 auth0 API
+//             const auth0AuthClient = buildAuthenticationClient();
+//             const accessToken = getAccessToken(req);
+//             // TODO: User profile should be cached to avoid many calls to API in order to not get rate limited
+//             const userProfile = await auth0AuthClient.getProfile(accessToken);
+//             fromEmail = userProfile.email as string;
+//         };
 
-        const resSendEmail = await sendEmail(
-            fromEmail,
-            sendEmailRequest.to,
-            sendEmailRequest.subject,
-            sendEmailRequest.message);
-        res.status(ACCEPTED);
-    } catch (err) {
+//         const resSendEmail = await sendEmail(
+//             fromEmail,
+//             sendEmailRequest.to,
+//             sendEmailRequest.subject,
+//             sendEmailRequest.message);
+//         res.status(ACCEPTED);
+//     } catch (err) {
+//         res.status(INTERNAL_SERVER_ERROR);
+//     }
+// }
+async function handleSendEmail(req: Request, res: Response) {
+    // TODO: Handle sending of email via SendGrid
+    // VALIDAR formato da mensagem em req.body
+    const SendEmailRequest = req.body as Api.SendEmailRequest;
+    
+    try{
+        sendEmail(
+            SendEmailRequest.from || 'beatrizpintooliveira@hotmail.com',
+            SendEmailRequest.to || 'beatrizpintooliveira@hotmail.com',
+            SendEmailRequest.subject || 'a',
+            SendEmailRequest.message || 'a');
+        //res.status(200);
+        res.status(ACCEPTED)
+    } catch(err) {
         res.status(INTERNAL_SERVER_ERROR);
+        //res.status(INTERNAL_SERVER_ERROR).send(buildApiErrorMessage('Not implemented'));
     }
+    
 }
 // Register routes
 router.post('/send_email', checkJwt, handleSendEmail);
