@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Network } from '@ngx-pwa/offline';
+import { PushNotificationOptions, PushNotificationService } from 'ngx-push-notifications';
 
 @Component({
   selector: 'app-root',
@@ -8,5 +9,5 @@ import { Network } from '@ngx-pwa/offline';
 })
 export class AppComponent {
   title = 'ai3';
-  constructor(protected network: Network) {}
+  constructor(protected network: Network, private _pushNotificationService: PushNotificationService) {}
 }
