@@ -28,11 +28,12 @@ import { ContactosComponent } from './contactos/contactos.component';
 import { PrincipalComponent } from './principal/principal.component';
 import { ProfileComponent } from './profile/profile.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
+import { PushNotificationService } from 'ngx-push-notifications';
 
 /**
  * Build API configuration
  */
-function buildApiConfiguration() {
+export function buildApiConfiguration() {
   const configurationParameters: ConfigurationParameters = {};
   // TODO: Token should be injected using HTTP Interceptor pattern (@see link in Moodle)
   const config = new Configuration(configurationParameters);
@@ -70,7 +71,7 @@ function buildApiConfiguration() {
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
   ],
   providers: [
-    // Hard-coded on API *Service classes but can be overriden here
+    [PushNotificationService],
     { provide: BASE_PATH, useValue: environment.apiBaseUrl },
   ],
   bootstrap: [AppComponent]

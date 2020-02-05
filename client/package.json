@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --proxy-config proxy.config.js",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
@@ -40,6 +40,7 @@
     "husky": "^4.2.1",
     "lodash": "^4.17.15",
     "mocha": "^7.0.1",
+    "ngx-push-notifications": "^7.0.2",
     "prettier": "^1.19.1",
     "pretty-quick": "^2.0.1",
     "query-string": "^6.10.1",

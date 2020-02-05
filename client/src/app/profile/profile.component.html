@@ -1,45 +1,30 @@
-<pre *ngIf="auth.userProfile$ | async as profile">
-    <!--<code>{{ profile | json }}</code>-->
-
-    
-    <h3 style="font-size: large;">
-    <code>{{ profile.given_name | json }}</code>
-    </h3>
-
-    <h3 style="font-size: large;">
-    <code>{{ profile.family_name | json }}</code>
-    </h3>
-
-    <h3 style="font-size: large;">
-    <code>{{ profile.nickname | json }}</code>
-    </h3>
-
-    <h3 style="font-size: large;">
-    <code>{{ profile.name | json }}</code>
-    </h3>
-
-    <h3 style="font-size: large;">
-    <code>{{ profile.picture | json }}</code>
-    </h3>
-
-    <h3 style="font-size: large;">
-    <code>{{ profile.locale | json }}</code>
-    </h3>
-
-    <h3 style="font-size: large;">
-    <code>{{ profile.updated_at | json }}</code>
-    </h3>
-    
-    <h3 style="font-size: large;">
-    <code>{{ profile.email | json }}</code>
-    </h3>
-
-    <h3 style="font-size: large;">
-    <code>{{ profile.email_verified | json }}</code>
-    </h3>
-
-    <h1 style="font-size: large;">
-    <code>{{ profile.sub | json }}</code>
-    </h1>
-
-</pre>
+<div class="Perfil">
+  <h1 class="titulo">Perfil</h1>
+  <div class="imgperfil">
+    <pre class="dados" *ngIf="auth.userProfile$ | async as profile">
+      <img class="imgut" src="{{profile.picture}}">
+    </pre>
+  </div>
+  <div class="Info">
+    <p class="textos">Nome</p>
+    <pre class="dados" *ngIf="auth.userProfile$ | async as profile">
+      <code class="textos2">{{profile.name}}</code>
+    </pre>
+    <p class="textos">Nome de Utilizador</p>
+    <pre class="dados" *ngIf="auth.userProfile$ | async as profile">
+      <code class="textos2">{{profile.nickname}}</code>
+    </pre>
+    <p class="textos">E-mail</p>
+    <pre class="dados" *ngIf="auth.userProfile$ | async as profile">
+      <code class="textos2">{{profile.email}}</code>
+    </pre>
+    <p class="textos">Verificação de E-mail</p>
+    <pre class="dados" *ngIf="auth.userProfile$ | async as profile">
+      <code class="textos2">{{profile.email_verified}}</code>
+    </pre>
+    <p class="textos">Atualizado em</p>
+    <pre class="dados" *ngIf="auth.userProfile$ | async as profile">
+      <code class="textos2">{{profile.updated_at}}</code>
+    </pre>
+  </div>
+</div>

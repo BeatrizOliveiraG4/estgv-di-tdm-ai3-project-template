@@ -26,6 +26,10 @@
     "express": "^4.17.1",
     "express-jwt": "^5.3.1",
     "express-rate-limit": "^5.0.0",
+<<<<<<< HEAD
+=======
+    "helmet": "^3.21.2",
+>>>>>>> dd3067d3da08bfeffecfe842f2464665416d9bea
     "http-status-codes": "^1.4.0",
     "husky": "^4.2.1",
     "jwks-rsa": "^1.6.2",
@@ -51,7 +55,10 @@
     "@types/morgan": "^1.7.37",
     "@types/node": "^13.1.8",
     "@types/supertest": "^2.0.8",
+<<<<<<< HEAD
     "@types/swagger-ui-express": "^4.1.1",
+=======
+>>>>>>> dd3067d3da08bfeffecfe842f2464665416d9bea
     "find": "^0.3.0",
     "fs-extra": "^8.1.0",
     "jasmine": "^3.5.0",
@@ -63,7 +70,6 @@
     "tslint": "^6.0.0",
     "typescript": "^3.7.5"
   },
-
   "editorConfig": {
     "env": {
       "browser": true,
