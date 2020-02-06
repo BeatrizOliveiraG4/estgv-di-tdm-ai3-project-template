@@ -1,8 +1,8 @@
 
 import { buildApiErrorMessage } from '@shared';
 import { Request, Response, Router } from 'express';
-import { INTERNAL_SERVER_ERROR } from 'http-status-codes';
-import { checkJwt, buildAuthenticationClient } from '../auth0';
+import { INTERNAL_SERVER_ERROR, ACCEPTED } from 'http-status-codes';
+import { checkJwt, buildAuthenticationClient, buildManagementClient } from '../auth0';
 
 const router = Router();
 
@@ -25,10 +25,18 @@ async function handleGetUserProfile(req: Request, res: Response) {
  * @param res Response
  */
 async function handleChangeUserPassword(req: Request, res: Response) {
-    // TODO: Handle user password change via Auth0 Auth API
-   //  authClient.changePassword()
+
+    const IChangePasswordRequest = req.body as Api.IChangePasswordRequest;
+    
+    try{
+        buildManagementClient(
+            IChangePasswordRequest.email || 'beatrizpintooliveira@hotmail.com');
+        //res.status(200);
+        res.status(ACCEPTED)
+    } catch(err) {
     res.status(INTERNAL_SERVER_ERROR)
         .json(buildApiErrorMessage('Not implemented'));
+    }
 }
 
 /**
