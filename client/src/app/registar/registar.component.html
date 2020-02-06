@@ -1,19 +1,20 @@
-<div class="Perfil">
-    <h1 class="titulo">Perfil</h1>
-    <div class="imgperfil">
-        <pre class="dados" *ngIf="auth.userProfile$ | async as profile">
-        <img class="imgut" src="{{profile.picture}}">
-      </pre>
-    </div>
+<div class="Registar">
+    <h1 class="titulo">Registar</h1>
     <div class="Info">
-        <form action="/action_page.php">
-            First name:<br>
-            <input type="text" name="firstname" value="Mickey">
-            <br>
-            Last name:<br>
-            <input type="text" name="lastname" value="Mouse">
-            <br><br>
-            <input type="submit" value="Submit">
-        </form>
+        <p class="textos">Primeiro Nome</p>
+        <input class="text" type="text" name="De" value=""><br>
+        <p class="textos">Ultimo Nome</p>
+        <input class="text" type="text" name="Para" value=""><br>
+        <p class="textos">E-mail</p>
+        <input class="text" type="text" name="Assunto" value=""><br>
+        <p class="textos">Password</p>
+        <input class="text" type="text" name="Mensagem" value=""><br>
+        <p class="textos">Username</p>
+        <input class="text" type="text" name="Mensagem" value=""><br>
+        <p class="textos">Nome</p>
+        <input class="text" type="text" name="Mensagem" value=""><br>
+        <p class="textos">Foto</p>
+        <input class="text" type="text" name="Mensagem" value=""><br>
+        <button type="submit">Click Me!</button>
     </div>
 </div>
