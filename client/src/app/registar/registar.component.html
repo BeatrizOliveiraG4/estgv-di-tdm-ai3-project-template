@@ -1,1 +1,19 @@
-<p>registar works!</p>
+<div class="Perfil">
+    <h1 class="titulo">Perfil</h1>
+    <div class="imgperfil">
+        <pre class="dados" *ngIf="auth.userProfile$ | async as profile">
+        <img class="imgut" src="{{profile.picture}}">
+      </pre>
+    </div>
+    <div class="Info">
+        <form action="/action_page.php">
+            First name:<br>
+            <input type="text" name="firstname" value="Mickey">
+            <br>
+            Last name:<br>
+            <input type="text" name="lastname" value="Mouse">
+            <br><br>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</div>
