@@ -62,4 +62,3 @@ export function getAccessToken(req: Request) {
   }
   throw new Error('No Bearer access token not found in Authorization headers');
 }
-
