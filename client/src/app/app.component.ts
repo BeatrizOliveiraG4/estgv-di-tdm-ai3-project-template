@@ -11,6 +11,8 @@ export class AppComponent {
   title = 'ai3';
   constructor(protected network: Network, private _pushNotificationService: PushNotificationService) {}
 
+
+  //ALINEA 6.4!!
   ngOnInit() {
     this._pushNotificationService.requestPermission();
   }
