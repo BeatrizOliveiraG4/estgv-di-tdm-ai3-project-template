@@ -5,7 +5,7 @@ function RateLimit(options) {
   options = Object.assign(
     {
       windowMs: 60 * 1000, // milliseconds - how long to keep records of requests in memory
-      max: 5, // max number of recent connections during `window` milliseconds before sending a 429 response
+      max: 23, // max number of recent connections during `window` milliseconds before sending a 429 response
       message: "Too many requests, please try again later.",
       statusCode: 429, // 429 status = Too Many Requests (RFC 6585)
       headers: true, //Send custom rate limit header with limit and remaining
