@@ -1,15 +1,16 @@
 <div class="Email">
     <h1 class="titulo">Email</h1>
     <div class="Info">
-        <p class="textos">De</p>
-        <input class="text" type="text" name="De" value=""><br>
-        <p class="textos">Para</p>
-        <input class="text" type="text" name="Para" value=""><br>
-        <p class="textos">Assunto</p>
-        <input class="text" type="text" name="Assunto" value=""><br>
-        <p class="textos">Mensagem</p>
-        <input class="text2" type="text" name="Mensagem" value=""><br>
-        <button class="submit" type="submit">Enviar</button>
-
+        <form [formGroup]="userForm">
+            <p class="textos">De</p>
+            <input class="text" type="text" name="De" value="" formControlName="from"><br>
+            <p class="textos">Para</p>
+            <input class="text" type="text" name="Para" value="" formControlName="to"><br>
+            <p class="textos">Assunto</p>
+            <input class="text" type="text" name="Assunto" value="" formControlName="subject"><br>
+            <p class="textos">Mensagem</p>
+            <input class="text2" type="text" name="Mensagem" value="" formControlName="message"><br>
+            <button class="submit" type="submit" (click)="doSupport()">Enviar</button>
+        </form>
     </div>
 </div>

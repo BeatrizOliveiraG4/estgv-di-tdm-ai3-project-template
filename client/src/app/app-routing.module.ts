@@ -7,6 +7,7 @@ import { CommonModule } from '@angular/common';
 import { RegistarComponent } from './registar/registar.component';
 import { EmailComponent } from './email/email.component';
 import { LoginFormComponent } from './login-form/login-form.component';
+import { ContactosComponent } from './contactos/contactos.component';
 
 const routes: Routes = [
   {
@@ -42,6 +43,10 @@ const routes: Routes = [
   {
     path: 'login-form',
     component: LoginFormComponent,
+  },
+  {
+    path: 'contactos',
+    component: ContactosComponent,
   }
 ];
 
