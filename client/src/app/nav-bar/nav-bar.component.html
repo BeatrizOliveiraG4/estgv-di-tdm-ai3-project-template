@@ -2,7 +2,7 @@
   <ul>
     <li><a routerLink="/">Início</a></li>
     <li><a routerLink="profile" *ngIf="auth.loggedIn">Perfil</a></li>
-    <li><a routerLink="registar">Registar</a></li>
+    <li><a routerLink="registar" *ngIf="!auth.loggedIn">Registar</a></li>
     <li><a routerLink="email" *ngIf="auth.loggedIn">Enviar Email</a></li>
     <li><a routerLink="contactos" *ngIf="auth.loggedIn">Contacte-nos</a></li>
     <li><a routerLink="login-form" *ngIf="!auth.loggedIn">Entrar</a></li>

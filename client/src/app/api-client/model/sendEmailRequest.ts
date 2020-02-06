@@ -11,7 +11,7 @@
  */
 
 export interface SendEmailRequest { 
-    from?: string;
+    from: string;
     to: string;
     subject: string;
     message: string;

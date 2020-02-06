@@ -1,12 +1,14 @@
 <div class="Contacte">
     <h1 class="titulo">Contacte-nos !</h1>
     <div class="Info">
-        <p class="textos">De</p>
-        <input class="text" type="text" name="De" value=""><br>
-        <p class="textos">Assunto</p>
-        <input class="text" type="text" name="Assunto" value=""><br>
-        <p class="textos">Mensagem</p>
-        <input class="text2" type="text" name="Mensagem" value=""><br>
-        <button class="submit" type="submit">Enviar</button>
+        <form [formGroup]="supportForm">
+            <p class="textos">De</p>
+            <input class="text" type="text" name="De" value="" formControlName="email"><br>
+            <p class="textos">Assunto</p>
+            <input class="text" type="text" name="Assunto" value="" formControlName="subject"><br>
+            <p class="textos">Mensagem</p>
+            <input class="text2" type="text" name="Mensagem" value="" formControlName="message"><br>
+            <button class="submit" type="submit" (click)="doSupport()">Enviar</button>
+        </form>
     </div>
 </div>
