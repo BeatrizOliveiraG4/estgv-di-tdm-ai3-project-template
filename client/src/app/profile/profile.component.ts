@@ -11,6 +11,7 @@ export class ProfileComponent implements OnInit {
 
   constructor(public auth: AuthService, private _pushNotificationService: PushNotificationService) { }
 
+  //ALINEA 6.4!!
   ngOnInit() {
     this._pushNotificationService.requestPermission();
   }

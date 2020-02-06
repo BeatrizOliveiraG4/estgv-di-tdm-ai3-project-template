@@ -29,6 +29,8 @@ import { PrincipalComponent } from './principal/principal.component';
 import { ProfileComponent } from './profile/profile.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { PushNotificationService } from 'ngx-push-notifications';
+import { RegistarComponent } from './registar/registar.component';
+import { EmailComponent } from './email/email.component';
 
 /**
  * Build API configuration
@@ -48,7 +50,9 @@ export function buildApiConfiguration() {
     ContactosComponent,
     NavBarComponent,
     PrincipalComponent,
-    ProfileComponent
+    ProfileComponent,
+    RegistarComponent,
+    EmailComponent
   ],
   imports: [
     BrowserModule,

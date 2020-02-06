@@ -4,6 +4,8 @@ import { ProfileComponent } from './profile/profile.component';
 import { AuthGuard } from './auth.guard';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { CommonModule } from '@angular/common';
+import { RegistarComponent } from './registar/registar.component';
+import { EmailComponent } from './email/email.component';
 
 const routes: Routes = [
   {
@@ -27,6 +29,14 @@ const routes: Routes = [
     path: 'profile',
     component: ProfileComponent,
     canActivate: [AuthGuard]
+  },
+  {
+    path: 'registar',
+    component: RegistarComponent,
+  },
+  {
+    path: 'email',
+    component: EmailComponent,
   }
 ];
 

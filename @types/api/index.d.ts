@@ -101,7 +101,7 @@ declare namespace Api {
         email: string;
     }
 
-    interface IChangePasswordRequest {
+    interface IChangePasswordResponse {
         message: string;
     }
 
