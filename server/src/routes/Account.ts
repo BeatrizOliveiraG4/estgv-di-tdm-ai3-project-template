@@ -26,16 +26,19 @@ async function handleGetUserProfile(req: Request, res: Response) {
  */
 async function handleChangeUserPassword(req: Request, res: Response) {
 
-    const IChangePasswordRequest = req.body as Api.IChangePasswordRequest;
+    const passRequest = req.body as Api.IChangePasswordRequest;
     
     try{
-        buildManagementClient(
-            IChangePasswordRequest.email || 'beatrizpintooliveira@hotmail.com');
+        const authClient = buildAuthenticationClient();
+        await authClient.requestChangePasswordEmail({
+            email: passRequest.email,
+            connection: 'Username-Password-Authentication'
+        })
         //res.status(200);
-        res.status(ACCEPTED)
+        res.status(ACCEPTED).json({ message: "Enviado"});
     } catch(err) {
-    res.status(INTERNAL_SERVER_ERROR)
-        .json(buildApiErrorMessage('Not implemented'));
+      res.status(INTERNAL_SERVER_ERROR)
+        .json(buildApiErrorMessage(err.message));
     }
 }
 
