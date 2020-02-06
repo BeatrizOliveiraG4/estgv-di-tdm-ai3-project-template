@@ -1,11 +1,12 @@
 <header class="barra_menu">
   <ul>
-    <li><a routerLink="/">Início</a></li>&nbsp;
+    <li><a routerLink="/">Início</a></li>
     <li><a routerLink="profile" *ngIf="auth.loggedIn">Perfil</a></li>
     <li><a routerLink="registar">Registar</a></li>
     <li><a routerLink="email" *ngIf="auth.loggedIn">Enviar Email</a></li>
     <li><a *ngIf="auth.loggedIn">Contactos</a></li>
-    <li><a id="login" (click)="auth.login()" *ngIf="!auth.loggedIn" style="margin-left:1280px">Entrar</a></li>
+    <li><a routerLink="login-form">Entrar</a></li>
+    <li><a id="login" (click)="auth.login()" *ngIf="!auth.loggedIn" style="margin-left:1280px">Entrar com auth0</a></li>
     <li><a (click)="auth.logout()" *ngIf="auth.loggedIn">Sair</a></li>
   </ul>
 </header>

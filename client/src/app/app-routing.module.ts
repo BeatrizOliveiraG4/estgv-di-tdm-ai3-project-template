@@ -6,6 +6,7 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { CommonModule } from '@angular/common';
 import { RegistarComponent } from './registar/registar.component';
 import { EmailComponent } from './email/email.component';
+import { LoginFormComponent } from './login-form/login-form.component';
 
 const routes: Routes = [
   {
@@ -37,6 +38,10 @@ const routes: Routes = [
   {
     path: 'email',
     component: EmailComponent,
+  },
+  {
+    path: 'login-form',
+    component: LoginFormComponent,
   }
 ];
 

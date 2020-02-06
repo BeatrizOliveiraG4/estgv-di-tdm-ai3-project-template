@@ -112,7 +112,7 @@ app.use(helmet.frameguard());
 //ALINEA 8 !!
 var cors = require('cors')
  
-var whitelist = ['http://example1.com', 'http://example2.com']
+var whitelist = ['localhost', 'beatrizoliveiraai3.eu.auth0.com']
 var corsOptions = {
   origin: function (origin, callback) {
     if (whitelist.indexOf(origin) !== -1) {
